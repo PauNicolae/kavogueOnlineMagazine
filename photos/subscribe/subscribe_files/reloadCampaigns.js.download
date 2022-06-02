@@ -1,0 +1,72 @@
+//<script>
+bouncex.tryCatch(function reloadCampaigns(){
+	var newCampaigns = false;
+	bouncex.creatives = false;
+	bouncex.brandStyles = false;
+	bouncex.webfonts = false;
+
+	if (bouncex.gbi) {
+		bouncex.gbi.stacks = false;
+	}
+
+	var newCookie = {"v":{"submitted_onsite":false,"submitted_email_daily":false,"submitted_email_royals":false,"submitted_email_runway":false,"submitted_email_beauty":false,"submitted_email_theget":false,"ever_logged_in":true,"ccpa_cali":true,"visit_per_month":5,"reg_gate_submitted":false,"reg_gate_url":false,"submitted_email_weddings":false},"fvt":1643344900,"vid":1654183699524432,"ao":12,"lp":"https%3A%2F%2Fwww.vogue.com%2Fshopping","as":0,"vpv":5,"d":"d","r":"www.vogue.com","cvt":1654183699,"sid":15,"gcr":43,"m":0,"did":"5233202900485373901","lvt":1654185362,"campaigns":{"1570072":{"lvt":1643627995,"as":2,"lavid":1,"la":1643627991,"fsa":1643626135,"ao":2,"oa":[],"wc":1643627993},"1570076":{"lvt":1643626960,"as":1,"lavid":1,"la":1643626960,"fsa":1643344842,"ao":2,"oa":[1643344842,1643626960],"io":1,"wc":1643626961},"1570078":{"lvt":1643361630,"lavid":1,"la":1643361630,"fsa":1643361630,"as":1,"ao":1,"oa":[]},"1570080":{"lvt":1643361628,"lavid":1},"1583495":{"lvt":1643604989,"as":1,"lavid":1,"la":1643604853,"fsa":1643361687,"ao":2,"oa":[1643361687,1643604853],"io":1,"wc":1643604855},"1586040":{"lvt":1643344859,"lavid":1,"la":1643344856,"fsa":1643344856,"as":1,"ao":1,"oa":[1643344856],"io":1,"wc":1643344858},"1670138":{"lvt":1653927321,"lavid":1},"1670970":{"lvt":1653927323,"lavid":1,"la":1653927323,"fsa":1653927323,"as":1,"ao":1,"oa":[]},"1670972":{"lvt":1653934017,"lavid":1,"la":1653933946,"fsa":1653933946,"as":1,"ao":1,"oa":[]},"1674434":{"lvt":1653934020,"as":1,"lavid":1,"la":1653934020,"fsa":1653934020,"ao":1,"oa":[]},"1698631":{"lvt":1653927572,"as":1,"lavid":1,"la":1653927324,"fsa":1653927324,"ao":1,"oa":[1653927324],"io":1,"wc":1653927327},"1715929":{"lvt":1654175321,"as":1,"lavid":1,"la":1654175321,"fsa":1653932533,"ao":4,"oa":[1653932533,1654002988,1654104280,1654175321],"io":1,"wc":1654175323},"1715988":{"lvt":1653933928,"lavid":1,"la":1653933910,"fsa":1653933910,"as":1,"ao":1,"oa":[],"wc":1653933912}}};
+	var campaignAdded = false;
+	for (var campaignId in newCampaigns) {
+		if (newCampaigns.hasOwnProperty(campaignId)) {
+			// if campaign cookie does not exist
+			if (!bouncex.cookie.campaigns) {
+				bouncex.cookie.campaigns = {};
+			} else {
+				bouncex.cookie.campaigns = Object.assign({}, bouncex.cookie.campaigns);
+			}
+
+			if (!bouncex.cookie.campaigns[campaignId]) {
+				campaignAdded = true;
+				bouncex.cookie.campaigns[campaignId] = {lvt:bouncex.cookie.lvt, vv:0};
+			} else if (newCookie.campaigns[campaignId]) {
+				// need to set campaign cookie's activations_sessions to the new cookie as it gets modified in reloadCampaigns
+				campaignAdded = true;
+				bouncex.cookie.campaigns[campaignId].as = newCookie.campaigns[campaignId].as;
+			}
+		}
+	}
+	if (campaignAdded) {
+		bouncex.setBounceCookie();
+	}
+
+	for (var campaignId in bouncex.campaigns) {
+		if (bouncex.campaigns.hasOwnProperty(campaignId)) { //copy state vars
+			if (newCampaigns[campaignId]) {
+				newCampaigns[campaignId].ap = bouncex.campaigns[campaignId].ap;
+				newCampaigns[campaignId].repressed = Boolean(bouncex.campaigns[campaignId].repressed);
+			}
+
+			if (newCampaigns[campaignId] &&
+				bouncex.campaigns[campaignId].ad_visible &&
+				newCampaigns[campaignId].html.replace(/fsa=(\d+)&|width=(\d+)&|height=(\d+)&/gi,'') == bouncex.campaigns[campaignId].html.replace(/fsa=(\d+)&|width=(\d+)&|height=(\d+)&/gi,'')) {
+								newCampaigns[campaignId] = bouncex.campaigns[campaignId];
+			} else if (newCampaigns[campaignId] && bouncex.isGbi2Campaign(campaignId) && bouncex.campaigns[campaignId].gbi.hasBegunAuction) {
+								newCampaigns[campaignId] = bouncex.campaigns[campaignId];
+			} else {
+				bouncex.destroy_ad(campaignId);
+			}
+		}
+	}
+
+	bouncex.campaigns = newCampaigns;
+	newCampaigns = {};
+
+	bouncex.debug = false;
+		bouncex.setBounceCookie();
+	if (bouncex.campaigns) {
+		for (var campaignId in bouncex.campaigns) {
+			if (bouncex.campaigns[campaignId].ad_visible && typeof bouncex.repressCampaigns === 'function') {
+				bouncex.repressCampaigns(campaignId);
+			}
+		}
+		bouncex.loadBounceCss(bouncex.initActivationFuncs);
+	}
+		bouncex.loadBrandStyles();
+	bouncex.loadWebfonts();
+
+	})();
