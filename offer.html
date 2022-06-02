@@ -14,10 +14,26 @@
         width: 100%;
       }
 
-    .btn:hover {
-      background: white;
-      color:black;
+    #btn2{
+      border: 1px solid;
+        width: 100%;
+        background: black
     }
+
+    #btn2:hover{
+      background: white;
+      
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+      }
+
+      a:hover{
+        color: black;
+      }
+
     </style>
 
   </head>
@@ -90,7 +106,7 @@
         <button id="btn" class="btn btn-danger">Add to Cart</button>
       </div>
       <div class="col-sm-3">
-        <button id="btn" class="btn btn-dark">Subscribe</button>
+        <button id="btn2" class="btn" data-bs-toggle="modal" data-bs-target="#"><a href="subscribe.html" class="subscribeNow" id="a">Subscribe Now</a></button>
       </div>
         </div>
         <hr>
