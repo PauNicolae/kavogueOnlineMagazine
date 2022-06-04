@@ -9,7 +9,14 @@
     <title>Multi-page Website with Bootstrap</title>
     
     <style>
-      
+.navbar-brand{
+  font-family: 'GFS Didot', serif;;
+}
+
+.title{
+  font-family: 'GFS Didot', serif;
+  font-size: 70px;
+}
 
     .btn {
         background: black;
@@ -84,7 +91,7 @@
 <section class="bg-light text-dark p-5 text-center">
   <div class="container">
     <div>
-        <h1>Magazine</h1>
+        <h1 class="title">Magazine</h1>
       </div>
 </section>
 <hr>
@@ -101,7 +108,7 @@
   <div class="container">
     <div>
       <a href="cover.html">
-        <img class="img-fluid w-80" src="./photos/home/vougemain.jpeg" alt="Hoyeon Jung" class="src" >
+        <img class="img-fluid w-80 shadow" src="./photos/home/vougemain.jpeg" alt="Hoyeon Jung" class="src" >
       </a>
       </div>
   </div>
@@ -121,7 +128,7 @@
       <div class="row pt-5 mb-5">
           <div class="col-md-3">
               <div class="card border-light">
-          <img src="./photos/home/VO1221_Cover_logo.jpg" alt="Sarah Jessica Parker" height="300px;">
+          <img src="./photos/home/VO1221_Cover_logo.jpg" alt="Sarah Jessica Parker" class="shadow" height="300px;">
           <p class="p-3 fw-bold">And Just Like That…Carrie’s Back!
             Sarah Jessica Parker Opens Up About a
             Grand Return</p>
@@ -130,21 +137,21 @@
 
       <div class="col-md-3">
           <div class="card border-light">
-      <img src="./photos/home/VO0122_SocialCover_logo.jpg" alt="Olivia Wilde" height="300px;">
+      <img src="./photos/home/VO0122_SocialCover_logo.jpg" alt="Olivia Wilde" class="shadow" height="300px;">
       <p class="p-3 fw-bold">Olivia Wilde Is Living Her Best Life</p>
       </div>
 </div>
 
   <div class="col-md-3">
       <div class="card border-light">
-  <img src="./photos/home/adele3.jpg" alt="Adelle" height="300px;">
+  <img src="./photos/home/adele3.jpg" alt="Adelle" class="shadow" height="300px;">
   <p class="p-3 fw-bold">Adele on the Other Side</p>
   </div>
 </div>
 
 <div class="col-md-3">
   <div class="card border-light">
-<img src="./photos/home/Vilma-Sjoberg-Vogue-Russia-January-2022-01.webp" alt="Vilma Sjoberg" height="300px;">
+<img src="./photos/home/Vilma-Sjoberg-Vogue-Russia-January-2022-01.webp" alt="Vilma Sjoberg" class="shadow" height="300px;">
 <p class="p-3 fw-bold">Design Scene Vilma Sjöberg is the Cover
   Star of Vogue Russia January 2022
   Issue</p>
@@ -158,7 +165,7 @@
   <div class="container">
     <div>
       <a href="signup.html">
-        <img class="img-fluid w-100" src="./photos/home/blackFridayFashionSale.png" alt="Hoyeon Jung" class="src" >
+        <img class="img-fluid w-100 shadow" src="./photos/home/blackFridayFashionSale.png" alt="Hoyeon Jung" class="src" >
       </a>
       </div>
   </div>
@@ -169,7 +176,7 @@
   <div class="container mt-5">
   <div class="col-md-8 offset-md-2">
     <a href="signup.html">
-      <img class="img-fluid w-100" src="./photos/home/kavogueClub.png" alt="Hoyeon Jung" class="src" >
+      <img class="img-fluid w-100 shadow" src="./photos/home/kavogueClub.png" alt="Hoyeon Jung" class="src" >
     </a>
     </div>
     </div>
@@ -182,47 +189,53 @@
     <!-- first row article -->
     <div class="col-md-3 mt-5 pt-5">
       <div class="card border-light">
-  <img src="./photos/home/fashion-photography-featured.jpg" alt="yellow outfit" height="300px;">
-  <p class="p-3 fw-bold">The Millenials Fashion Show</p>
-  </div>
-</div>
-<div class="col-md-3">
-  <div class="card border-light mt-5 pt-5">
-<img src="./photos/home/kendal.jpg" alt="fahion show" height="300px;">
-<p class="p-3 fw-bold">Walk the runway</p>
-</div>
-</div>
+    <img src="./photos/home/image.webp" class="shadow" alt="fahion show" height="300px;">
+    <p class="p-3 fw-bold">Walk the runway</p>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card border-light mt-5 pt-5">
+      <img src="./photos/home/outfit.jpg" alt="fahion show" class="shadow" height="300px;">
+      <p class="p-3 fw-bold">Check the new outfit trends</p>
+      </div>
+      </div>   
+
 <div class="col-md-3 mt-5 pt-5">
   <div class="card border-light">
-<img src="./photos/home/plussize.webp" alt="Plus size" height="300px;">
-<p class="p-3 fw-bold">Plus Size is the New Sexy</p>
-</div>
-</div>
+  <img src="./photos/home/bff.jpg" alt="Plus size" class="shadow" height="300px;">
+  <p class="p-3 fw-bold">Tag you BFFs!</p>
+  </div>
+  </div>
+
 <div class="col-md-3 sidebar">
-    <a href="theget.html"><img src="./photos/home/BOOST White Minimal Summer Sale Fashion Ads Flyer.png" class="img-fluid" alt="sale"></a>
+    <a href="theget.html"><img src="./photos/home/BOOST White Minimal Summer Sale Fashion Ads Flyer.png" class="img-fluid shadow" alt="sale"></a>
     </div>
 
 <!-- 2nd row -->
 <div class="col-md-3 mt-5 pt-5">
     <div class="card border-light">
-<img src="./photos/home/men.jpg" height="300px;">
+<img src="./photos/home/men.jpg" class="shadow" height="300px;">
 <p class="p-3 fw-bold">MensFashion Show</p>
 </div>
 </div>
-<div class="col-md-3">
-<div class="card border-light mt-5 pt-5">
-<img src="./photos/home/outfit.jpg" alt="fahion show" height="300px;">
-<p class="p-3 fw-bold">Check the new outfit trends</p>
-</div>
-</div>
+
 <div class="col-md-3 mt-5 pt-5">
-<div class="card border-light">
-<img src="./photos/home/3girls.jpg" alt="Plus size" height="300px;">
-<p class="p-3 fw-bold">Tag you BFFs!</p>
+  <div class="card border-light">
+<img src="./photos/home/fashion-photography-featured.jpg" alt="yellow outfit" class="shadow" height="300px;">
+<p class="p-3 fw-bold">The Millenials Fashion Show</p>
 </div>
 </div>
+
+<div class="col-md-3 mt-5 pt-5">
+  <div class="card border-light">
+<img src="./photos/home/plussize.webp" class="shadow" alt="Plus size" height="300px;">
+<p class="p-3 fw-bold">Plus Size is the New Sexy</p>
+</div>
+</div>
+
 <div class="col-md-3 sidebar mb-5 ">
-    <a href="theget.html"><img src="./photos/home/newstyleads.png" class="img-fluid" alt="sale"></a>
+    <a href="theget.html"><img src="./photos/home/newstyleads.png" class="img-fluid shadow" alt="sale"></a>
   </div>
 </div>
 </div>
