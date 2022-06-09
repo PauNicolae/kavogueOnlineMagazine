@@ -1,1 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz@1,6..96&family=GFS+Didot&family=Montserrat:wght@100&family=Poppins:wght@100;200;300&display=swap');
+
+.navbar-brand{
+  font-family: 'GFS Didot', serif;;
+}
+
+.title{
+  font-family: 'GFS Didot', serif;
+  /* font-size: 50px; */
+}
+
+    .btn {
+        background: black;
+        border: 1px solid;
+      }
+
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+
+      a{
+        text-decoration: none;
+        color: white;
+      }
+
+      a:hover{
+        color: black;
+      }
