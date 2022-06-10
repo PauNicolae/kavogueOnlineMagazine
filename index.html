@@ -9,12 +9,23 @@
     <title>Multi-page Website with Bootstrap</title>
 
     <style>
+#mainPhoto{
+        display: block;
+}
+
+#swapPhoto{
+        display: none;
+}
+
+
       @media screen and (max-width: 480px){
-        .mainPhoto{
-          width: 480px;
-          height: 368px;
-          background-color: yellowgreen;
-        }
+       #mainPhoto{
+        display: none;
+      }
+
+      #swapPhoto{
+        display: block;
+      }
 
 
         .card{
@@ -113,7 +124,8 @@
 
 <section class=" text-dark p-5 text-center">
       <a href="cover.html">
-        <img class="img-fluid w-100 shadow" src="./photos/home/vougemain.jpeg" alt="Hoyeon Jung" class="mainPhoto">
+        <img class="img-fluid w-100 shadow" src="./photos/home/vougemain.jpeg" id="mainPhoto" alt="Hoyeon Jung" class="mainPhoto">
+        <img src="./photos/cover/VO0222_Cover_Logo.webp" id="swapPhoto" class="img-fluid" alt="hoyeon jung">
       </a>
 </section>
 
