@@ -8,7 +8,36 @@
     <link rel="shortcut icon" href="./photos/icon/1200px-LetterK.svg.png" type="image/png">
     <title>Multi-page Website with Bootstrap</title>
 
-    
+    <style>
+      @media screen and (max-width: 480px){
+        .card{
+          width: 300px;
+          height: 368px;
+          margin-left: 2em;
+
+        }
+        
+        .sidebar{
+          width: 200px;
+          height: 268px;
+          margin-left: 5em;
+        }
+      }
+
+      @media screen and (max-width: 767px){
+        .card{
+          width: 300px;
+          height: 368px;
+        }
+        
+        .sidebar{
+          width: 200px;
+          height: 268px;
+          margin-left: 4em;
+        }
+      }
+
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -97,7 +126,7 @@
 <section>
   <div class="container">
       <div class="row pt-5 mb-5">
-          <div class="col-xs-6 col-sm-3 col-md-3">
+          <div class="col-sm-6 col-md-3">
               <div class="card border-light">
           <img src="./photos/home/VO1221_Cover_logo.jpg" alt="Sarah Jessica Parker" class="shadow" height="300px;">
           <p class="p-3 fw-bold">And Just Like That…Carrie’s Back!
@@ -113,14 +142,14 @@
       </div>
 </div>
 
-  <div class="col-xs-6 col-sm-3 col-md-3">
+  <div class="col-sm-6 col-md-3">
       <div class="card border-light">
   <img src="./photos/home/adele3.jpg" alt="Adelle" class="shadow" height="300px;">
   <p class="p-3 fw-bold">Adele on the Other Side</p>
   </div>
 </div>
 
-<div class="col-xs-6 col-sm-3 col-md-3">
+<div class="col-sm-6 col-md-3">
   <div class="card border-light">
 <img src="./photos/home/Vilma-Sjoberg-Vogue-Russia-January-2022-01.webp" alt="Vilma Sjoberg" class="shadow" height="300px;">
 <p class="p-3 fw-bold">Design Scene Vilma Sjöberg is the Cover
@@ -136,7 +165,7 @@
   <div class="container">
     <div>
       <a href="signup.html">
-        <img class="img-fluid w-100 shadow" src="./photos/home/blackFridayFashionSale.png" alt="Hoyeon Jung" class="src" >
+        <img class="img-fluid w-100 shadow" src="./photos/home/blackFridayFashionSale.png" alt="Hoyeon Jung" class="banner" >
       </a>
       </div>
   </div>
@@ -147,32 +176,31 @@
   <div class="container mt-5">
   <div class="col-md-8 offset-md-2">
     <a href="signup.html">
-      <img class="img-fluid w-100 shadow" src="./photos/home/kavogueClub.png" alt="Hoyeon Jung" class="src" >
+      <img class="img-fluid w-100 shadow" src="./photos/home/kavogueClub.png" alt="Hoyeon Jung" class="bannerTwo" >
     </a>
     </div>
     </div>
 
       <!-- articles and sidebar ads -->
   <div class="container">
-    
   <div class="row mt-5 pt-5">
   
     <!-- first row article -->
-    <div class="col-xs-6 col-sm-3 col-md-3 mt-5 pt-5">
+    <div class="col-sm-6 col-md-3 mt-5 pt-5">
       <div class="card border-light">
     <img src="./photos/home/image.webp" class="shadow" alt="fahion show" height="300px;">
     <p class="p-3 fw-bold">Walk the runway</p>
     </div>
     </div>
 
-    <div class="col-xs-6 col-sm-3 col-md-3">
+    <div class="col-sm-6 col-md-3">
       <div class="card border-light mt-5 pt-5">
       <img src="./photos/home/outfit.jpg" alt="fahion show" class="shadow" height="300px;">
       <p class="p-3 fw-bold">Check the new outfit trends</p>
       </div>
       </div>   
 
-<div class="col-xs-6 col-sm-3 col-md-3 mt-5 pt-5">
+<div class="col-sm-6 col-md-3 mt-5 pt-5">
   <div class="card border-light">
   <img src="./photos/home/bff.jpg" alt="Plus size" class="shadow" height="300px;">
   <p class="p-3 fw-bold">Tag your BFFs!</p>
@@ -184,21 +212,21 @@
     </div>
 
 <!-- 2nd row -->
-<div class="col-xs-6 col-sm-3 col-md-3 mt-5 pt-5">
+<div class="col-sm-6 col-md-3 mt-5 pt-5">
     <div class="card border-light">
 <img src="./photos/home/men.jpg" class="shadow" height="300px;">
 <p class="p-3 fw-bold">MensFashion Show</p>
 </div>
 </div>
 
-<div class="col-xs-6 col-sm-3 col-md-3 mt-5 pt-5">
+<div class="col-sm-6 col-md-3 mt-5 pt-5">
   <div class="card border-light">
 <img src="./photos/home/fashion-photography-featured.jpg" alt="yellow outfit" class="shadow" height="300px;">
 <p class="p-3 fw-bold">The Millenials Fashion Show</p>
 </div>
 </div>
 
-<div class="col-xs-6 col-sm-3 col-md-3 mt-5 pt-5">
+<div class="col-sm-6 col-md-3 mt-5 pt-5">
   <div class="card border-light">
 <img src="./photos/home/plussize.webp" class="shadow" alt="Plus size" height="300px;">
 <p class="p-3 fw-bold">Plus Size is the New Sexy</p>
